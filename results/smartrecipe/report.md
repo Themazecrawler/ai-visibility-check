@@ -1,7 +1,7 @@
 # AI visibility report
 
 **URL:** https://smart-recipe-swart.vercel.app
-**Checked:** 2026-10-03T19:58:33.116Z
+**Checked:** 2026-10-03T20:14:20.888Z
 
 ## Result: 17% visible to AI crawlers
 
@@ -16,7 +16,7 @@ Poor: to an AI crawler this page is mostly empty.
 Detected stack: **Next.js**
 Render these pages on the server: move data fetching into Server Components / getStaticProps, and avoid 'use client' wrappers around the whole page.
 
-## AI bots blocked in robots.txt
+## AI bots blocked from this page in robots.txt
 No robots.txt found.
 
 ## What AI crawlers can't see (33 lines)
@@ -54,11 +54,11 @@ No robots.txt found.
 
 ## The fix
 1. **Real fix:** Render these pages on the server: move data fetching into Server Components / getStaticProps, and avoid 'use client' wrappers around the whole page.
-2. **Quick fix:** upload the generated `llms.txt` to your site root.
+2. **Quick fix:** upload the generated `page.md` to your site at `/index.html.md`, and list it in your site's `/llms.txt` index.
 3. **Point to it:** paste this in your page's `<head>`. It sits in the raw HTML, so crawlers that skip JavaScript still see it:
 
 ```html
-<link rel="alternate" type="text/markdown" href="/llms.txt" title="Text version for AI tools">
+<link rel="alternate" type="text/markdown" href="/index.html.md" title="Text version for AI tools">
 ```
 
-Note: no AI company has confirmed its crawler reads llms.txt. The real fix (1) is the only guaranteed one.
+Note: no AI company has confirmed its crawler reads llms.txt or .md copies of pages. The real fix (1) is the only guaranteed one.

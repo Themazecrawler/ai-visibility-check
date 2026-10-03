@@ -1,7 +1,7 @@
 # AI visibility report
 
 **URL:** https://ctaio.dev/en/
-**Checked:** 2026-10-03T19:59:06.893Z
+**Checked:** 2026-10-03T20:14:27.063Z
 
 ## Result: 94% visible to AI crawlers
 
@@ -16,7 +16,7 @@ Good: AI crawlers can read almost all of this page.
 Detected stack: **Astro**
 Astro ships HTML by default. Check components marked client:only, which render nothing until JavaScript runs.
 
-## AI bots blocked in robots.txt
+## AI bots blocked from this page in robots.txt
 None of the major AI bots are blocked.
 
 ## What AI crawlers can't see (1 line)
@@ -24,11 +24,11 @@ None of the major AI bots are blocked.
 
 ## The fix
 1. **Real fix:** Astro ships HTML by default. Check components marked client:only, which render nothing until JavaScript runs.
-2. **Quick fix:** upload the generated `llms.txt` to your site root.
+2. **Quick fix:** upload the generated `page.md` to your site at `/en/index.html.md`, and list it in your site's `/llms.txt` index.
 3. **Point to it:** paste this in your page's `<head>`. It sits in the raw HTML, so crawlers that skip JavaScript still see it:
 
 ```html
-<link rel="alternate" type="text/markdown" href="/llms.txt" title="Text version for AI tools">
+<link rel="alternate" type="text/markdown" href="/en/index.html.md" title="Text version for AI tools">
 ```
 
-Note: no AI company has confirmed its crawler reads llms.txt. The real fix (1) is the only guaranteed one.
+Note: no AI company has confirmed its crawler reads llms.txt or .md copies of pages. The real fix (1) is the only guaranteed one.

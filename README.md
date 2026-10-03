@@ -11,9 +11,9 @@ This script loads a page twice and compares the results:
 
 It then writes:
 
-- `report.md`: the percentage visible to AI, the exact text crawlers miss, the detected stack and the fix for that stack, and which AI bots (GPTBot, ClaudeBot, PerplexityBot…) `robots.txt` blocks
-- `llms.txt`: a plain-text version of the full rendered page, ready to upload
-- the one-line `<link rel="alternate">` tag that points crawlers to that file. It goes in the raw HTML, so crawlers that skip JavaScript still find it
+- `report.md`: the percentage visible to AI, the exact text crawlers miss, the detected stack and the fix for that stack, and which AI bots (GPTBot, ClaudeBot, PerplexityBot…) `robots.txt` blocks from that page, including blanket `User-agent: *` rules, path rules and wildcards (RFC 9309 matching)
+- `page.md`: a plain-text (Markdown) copy of the full rendered page, to upload at the page's URL + `.md` and list in your site's `/llms.txt` index
+- the one-line `<link rel="alternate">` tag that points crawlers to that copy. It goes in the raw HTML, so crawlers that skip JavaScript still find it
 
 ## Run it
 
@@ -35,7 +35,7 @@ Both of my own apps are close to invisible to AI crawlers. CollabSpace ships an 
 
 ## Honest limits
 
-- **No AI company has confirmed that its crawler reads `llms.txt`.** The `<link>` tag makes the file easy to find, but the only guaranteed fix is server rendering or pre-rendering (the report names the right one for your stack).
+- **No AI company has confirmed that its crawler reads `llms.txt` or `.md` page copies.** The `<link>` tag makes the copy easy to find, but the only guaranteed fix is server rendering or pre-rendering (the report names the right one for your stack).
 - "Visible" means the text appears somewhere in the raw HTML. It doesn't measure whether an AI understands or ranks the page.
 - Coverage is word-weighted, so it checks one URL at a time, not a whole site.
 
